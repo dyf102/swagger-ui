@@ -18,6 +18,7 @@ export default class BaseLayout extends React.Component {
     this.props.layoutActions.updateFilter(value)
   }
 
+
   render() {
     let { specSelectors, specActions, getComponent, layoutSelectors } = this.props
 
@@ -71,7 +72,7 @@ export default class BaseLayout extends React.Component {
                   { schemes && schemes.size ? (
                     <Schemes schemes={ schemes } specActions={ specActions } />
                   ) : null }
-
+                  
                   { securityDefinitions ? (
                     <AuthorizeBtn />
                   ) : null }
@@ -80,7 +81,7 @@ export default class BaseLayout extends React.Component {
             ) : null }
 
             {
-              filter === null || filter === false ? null :
+              //filter === null || filter === false ? null :
                 <div className="filter-container">
                   <Col className="filter wrapper" mobile={12}>
                     <input className="operation-filter-input" placeholder="Filter by tag" type="text" onChange={this.onFilterChange} value={filter === true || filter === "true" ? "" : filter} disabled={isLoading} style={inputStyle} />
